@@ -1,24 +1,27 @@
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const spawn = require('child_process').spawn;
 
 var mainWindow = null;
+var pymain;
 
 app.on('window-all-closed', function() {
   // Close application when all windows are closed
+  pymain.kill('SIGINT');
   app.quit();
 });
 
 app.on('ready', function() {
   // Call python/Flask portion of program in main.py
-  var pymain = require('child_process').spawn('python', ['./src/main.py']);
+  pymain = spawn('python', ['./src/main.py']);
   // Initialize request-promise
   var reqprm = require('request-promise');
   // Set address for python/Flask backend
   var mainAddr = "http://127.0.0.1:5000";
 
   var openWindow = function() {
-    mainWindow = new BrowserWindow({title: "pelt", width: 800, height: 600});
+    mainWindow = new BrowserWindow({title: "pelt", width: 600, height: 400});
     mainWindow.loadURL(mainAddr);
     mainWindow.on('closed', function() {
       mainWindow = null;
