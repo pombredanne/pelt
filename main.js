@@ -18,7 +18,7 @@ app.on('ready', function() {
   var mainAddr = "http://127.0.0.1:5000";
 
   var openWindow = function() {
-    mainWindow = new BrowserWindow({title: "peyl", width: 800, height: 600});
+    mainWindow = new BrowserWindow({title: "pelt", width: 800, height: 600});
     mainWindow.loadURL(mainAddr);
     mainWindow.on('closed', function() {
       mainWindow = null;

@@ -1,10 +1,10 @@
-"""peyl theme module.
+"""pelt theme module.
 """
 
 import json
 
 class Theme(object):
-    """peyl Theme class.
+    """pelt Theme class.
     """
     def __init__(self, path=""):
         self.json_path = path + '/style.json'
