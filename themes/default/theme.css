@@ -1,0 +1,40 @@
+@font-face {
+  font-family: main;
+  src: url(./Monospace.ttf);
+  font-weight: normal;
+}
+
+* {
+  font-size: 100%;
+  font-family: main;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #b925ff;
+  margin: 0px;
+}
+
+html, body {
+  border: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#terminal {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+#out {
+  background-color: #1becff;
+  flex: 1 1 auto;
+}
+
+#in {
+  background-color: #ff4c1b;
+  flex: 0 1 40px;
+}
