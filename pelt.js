@@ -1,8 +1,8 @@
 const electron = require('electron');
-const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const spawn = require('child_process').spawn;
 
+var app = electron.app;
 var mainWindow = null;
 var pymain;
 
@@ -22,7 +22,8 @@ app.on('ready', function() {
 
   var openWindow = function() {
     mainWindow = new BrowserWindow({title: "pelt", width: 600, height: 400});
-    mainWindow.loadURL(mainAddr);
+    // Modified version of loadURL to avoid issues with caching
+    mainWindow.loadURL(mainAddr, {"extraHeaders" : "pragma: no-cache\n"});
     mainWindow.on('closed', function() {
       mainWindow = null;
       pymain.kill('SIGINT');
