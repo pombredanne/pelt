@@ -1,8 +1,10 @@
 {
 	"name":"pelt",
 	"version":"0.0.1",
+	"homepage":"https://github.com/uchua/pelt",
 	"main":"./pelt.js",
 	"dependencies": {
-		"electron-prebuilt":"*"
+		"electron-prebuilt":"*",
+		"request-promise":"*"
 	}
 }
