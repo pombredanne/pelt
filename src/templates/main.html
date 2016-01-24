@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<title>pelt</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='theme.css') }}">
+<script type="text/javascript" src="{{ url_for('main_js', filename='main.js') }}"></script>
+<div id="terminal">
+  <div id="out">
+    {% if log %}
+      {% for line in log %}
+        <p class="log">{{ line }}</p>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div id="in">
+    <form action="." method="POST">
+      <input type="text" name="text">
+    </form>
+  </div>
+</div>
